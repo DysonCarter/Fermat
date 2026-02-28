@@ -9,6 +9,7 @@
   background: #ffffff;
   color: #1a1a1a;
   font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  overflow: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,6 +48,7 @@
   font-weight: 300;
   color: #b8860b;
   font-family: "Georgia", serif;
+  user-select: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -60,6 +62,7 @@
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #1a1a1a;
+  user-select: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -91,6 +94,7 @@
   display: flex;
   flex: 1;
   min-height: 0;
+  overflow: hidden;
 }
 
 .pane {
@@ -98,6 +102,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  overflow: hidden;
 }
 
 .paneHeader {
@@ -168,6 +173,8 @@
   resize: none;
   tab-size: 2;
   caret-color: #b8860b;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -202,6 +209,7 @@
   flex: 1;
   padding: 24px;
   overflow-y: auto;
+  overflow-x: hidden;
   line-height: 1.75;
   font-size: 0.925rem;
 }
@@ -291,6 +299,9 @@
 .preview ol {
   padding-left: 1.5em;
   margin: 0 0 1em 0;
+}
+
+.preview ul {
   list-style: disc;
 }
 
@@ -401,6 +412,75 @@
 @media (prefers-color-scheme: dark) {
   .preview pre code {
     color: #b0b0b4;
+  }
+}
+
+/* ── GitHub Flavored Markdown Styles ── */
+
+/* Tables */
+.preview table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+
+.preview table th {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 0.75em;
+  text-align: left;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview table th {
+    background: #161619;
+    border-color: #1e1e22;
+    color: #f0f0f0;
+  }
+}
+
+.preview table td {
+  border: 1px solid #ddd;
+  padding: 0.75em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview table td {
+    border-color: #1e1e22;
+  }
+}
+
+.preview table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview table tr:nth-child(even) {
+    background: #0f0f12;
+  }
+}
+
+/* Task lists */
+.preview input[type="checkbox"] {
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.preview li input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+/* Strikethrough */
+.preview del {
+  color: #999;
+  text-decoration: line-through;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview del {
+    color: #666;
   }
 }
 
