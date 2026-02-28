@@ -1,0 +1,458 @@
+:root {
+  color-scheme: light dark;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: #0a0a0b;
+    color: #e0e0e0;
+  }
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f5f5f5;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    border-bottom-color: #1e1e22;
+    background: #0f0f12;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoSymbol {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #b8860b;
+  font-family: "Georgia", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logoSymbol {
+    color: #c9a55a;
+  }
+}
+
+.logoText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logoText {
+    color: #f0f0f0;
+  }
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.charCount {
+  font-size: 0.75rem;
+  color: #999;
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  .charCount {
+    color: #555;
+  }
+}
+
+/* ── Editor Area ── */
+.editorArea {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.paneHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .paneHeader {
+    border-bottom-color: #1a1a1e;
+  }
+}
+
+.paneLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #777;
+}
+
+@media (prefers-color-scheme: dark) {
+  .paneLabel {
+    color: #888;
+  }
+}
+
+.paneSublabel {
+  font-size: 0.65rem;
+  color: #aaa;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  .paneSublabel {
+    color: #444;
+  }
+}
+
+/* ── Divider ── */
+.divider {
+  width: 1px;
+  background: #e0e0e0;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .divider {
+    background: #1e1e22;
+  }
+}
+
+/* ── Textarea (Left) ── */
+.textarea {
+  flex: 1;
+  padding: 24px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #333;
+  font-family: "IBM Plex Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  resize: none;
+  tab-size: 2;
+  caret-color: #b8860b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .textarea {
+    color: #c8c8cc;
+    caret-color: #c9a55a;
+  }
+}
+
+.textarea::placeholder {
+  color: #ccc;
+}
+
+@media (prefers-color-scheme: dark) {
+  .textarea::placeholder {
+    color: #333;
+  }
+}
+
+.textarea::selection {
+  background: rgba(184, 134, 11, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .textarea::selection {
+    background: rgba(201, 165, 90, 0.2);
+  }
+}
+
+/* ── Preview (Right) ── */
+.preview {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  line-height: 1.75;
+  font-size: 0.925rem;
+}
+
+/* ── Markdown Styles in Preview ── */
+.preview h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 0.6em 0;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  font-family: "Georgia", "Palatino Linotype", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview h1 {
+    color: #f5f5f5;
+  }
+}
+
+.preview h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 1.6em 0 0.5em 0;
+  color: #2a2a2a;
+  font-family: "Georgia", "Palatino Linotype", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview h2 {
+    color: #e8e8e8;
+  }
+}
+
+.preview h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.4em 0 0.4em 0;
+  color: #444;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview h3 {
+    color: #d0d0d0;
+  }
+}
+
+.preview p {
+  margin: 0 0 1em 0;
+}
+
+.preview strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview strong {
+    color: #f0f0f0;
+  }
+}
+
+.preview em {
+  color: #555;
+  font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview em {
+    color: #ccc;
+  }
+}
+
+.preview hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1.8em 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview hr {
+    border-top-color: #252528;
+  }
+}
+
+.preview ul,
+.preview ol {
+  padding-left: 1.5em;
+  margin: 0 0 1em 0;
+  list-style: disc;
+}
+
+.preview ol {
+  list-style: decimal;
+}
+
+.preview li {
+  margin: 0.35em 0;
+  display: list-item;
+}
+
+.preview li::marker {
+  color: #b8860b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview li::marker {
+    color: #c9a55a;
+  }
+}
+
+.preview blockquote {
+  border-left: 3px solid #b8860b;
+  margin: 1.2em 0;
+  padding: 0.5em 1.2em;
+  background: rgba(184, 134, 11, 0.05);
+  color: #666;
+  font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview blockquote {
+    border-left-color: #c9a55a;
+    background: rgba(201, 165, 90, 0.04);
+    color: #999;
+  }
+}
+
+.preview a {
+  color: #b8860b;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview a {
+    color: #c9a55a;
+    border-bottom-color: rgba(201, 165, 90, 0.3);
+  }
+}
+
+.preview a:hover {
+  border-bottom-color: #b8860b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview a:hover {
+    border-bottom-color: #c9a55a;
+  }
+}
+
+/* Inline code */
+.preview code {
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+  font-size: 0.85em;
+  background: #f0f0f0;
+  padding: 0.15em 0.45em;
+  border-radius: 4px;
+  color: #b8860b;
+  border: 1px solid #ddd;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview code {
+    background: #161619;
+    color: #d4a55a;
+    border-color: #222;
+  }
+}
+
+/* Code blocks */
+.preview pre {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview pre {
+    background: #111114;
+    border-color: #1e1e22;
+  }
+}
+
+.preview pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #333;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview pre code {
+    color: #b0b0b4;
+  }
+}
+
+/* ── KaTeX Overrides ── */
+.preview .katex-display {
+  margin: 1.2em 0;
+  padding: 0.8em 0;
+}
+
+.preview .katex {
+  color: #333;
+  font-size: 1.05em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview .katex {
+    color: #e8dcc8;
+  }
+}
+
+/* ── Scrollbar ── */
+.preview::-webkit-scrollbar,
+.textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.preview::-webkit-scrollbar-track,
+.textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.preview::-webkit-scrollbar-thumb,
+.textarea::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview::-webkit-scrollbar-thumb,
+  .textarea::-webkit-scrollbar-thumb {
+    background: #252528;
+  }
+}
+
+.preview::-webkit-scrollbar-thumb:hover,
+.textarea::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview::-webkit-scrollbar-thumb:hover,
+  .textarea::-webkit-scrollbar-thumb:hover {
+    background: #333;
+  }
+}
