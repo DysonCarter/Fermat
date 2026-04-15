@@ -8,7 +8,7 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import styles from "./FermatEditor.module.css";
 
-const PLACEHOLDER = `# Welcome to Fermat
+const PLACEHOLDER = `# Welcome to Fermatt
 
 Write **Markdown** and *LaTeX* together, seamlessly.
 
@@ -48,7 +48,7 @@ Here's a list with math:
 
 \`\`\`python
 # Code blocks are left alone
-def fermat(n):
+def fermatt(n):
     return n ** 2
 \`\`\`
 `;
@@ -62,7 +62,7 @@ export default function FermatEditor() {
       <header className={styles.header}>
         <div className={styles.logo}>
           <span className={styles.logoSymbol}>∫</span>
-          <span className={styles.logoText}>Fermat</span>
+          <span className={styles.logoText}>Fermaπ</span>
         </div>
         <div className={styles.headerActions}>
           <span className={styles.charCount}>
